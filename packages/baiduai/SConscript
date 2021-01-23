@@ -1,0 +1,12 @@
+from building import *
+
+cwd  = GetCurrentDir()
+path = [cwd]
+path += [cwd + '/base']
+
+src  = Glob('*.c')
+src  += Glob('base/*.c')
+
+group = DefineGroup('BAIDUAI', src, depend = [''], CPPPATH = path)
+
+Return('group')
